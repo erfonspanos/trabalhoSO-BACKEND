@@ -70,18 +70,10 @@ A interface Swing permite ao usuário:
 
 Existem duas formas de executar o simulador:
 
-### 1. Executando pela IDE (Recomendado)
+### Executando pela IDE (Recomendado)
 
 1. Clone o repositório.  
 2. Abra o projeto em sua **IDE Java** preferida (IntelliJ, Eclipse, etc.).  
-3. Localize a classe principal que contém o método `main` (provavelmente `Main.java` ou `SimuladorGUI.java`).  
-4. Execute o arquivo. A interface Swing será iniciada.
+3. Localize a classe principal da UI que contém o método `SimulationUI`.  
+4. Execute o arquivo. A interface Swing será iniciada já utilizando nossos Algoritmos implementados.
 
----
-
-### 2. Executando o arquivo `.jar` (Se disponível)
-
-Se um arquivo `.jar` executável for fornecido, você pode executá-lo com um duplo clique ou através do terminal:
-
-```bash
-java -jar nome-do-arquivo.jar
