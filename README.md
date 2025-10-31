@@ -1,63 +1,87 @@
-UNIVERSIDADE DE FORTALEZA
-<br>
-CENTRO DE CIÊNCIAS TECNOLÓGICAS
-<br>
-CURSO: CIÊNCIA DA COMPUTAÇÃO
-<br>
-<br>
-<br>
-<br>
+# SIMULADOR PARA ANÁLISE DE DESEMPENHO DE ALGORITMOS DE SUBSTITUIÇÃO DE PÁGINAS
 
-## **SIMULADOR PARA ANÁLISE DE DESEMPENHO DE ALGORITMOS DE SUBSTITUIÇÃO DE PÁGINAS**
+### Autor 1: Erfon Spanos  
+### Autor 2: Rodrigo Cirino  
 
-<br>
-<br>
+**Palavras-chave:** Memória Virtual • Sistemas Operacionais • Algoritmos de Substituição de Páginas • Simulador • Java Swing  
 
-**Autor 1:** Rodrigo Cirino.
-<br>
-**Autor 2:** Erfon Spanos.
-
-<br>
-<br>
-
-**Palavras-chave:**
-Memória Virtual. Sistemas Operacionais. Algoritmos de Substituição de Páginas. Simulador. Java Swing.
-
-<br>
+---
 
 ## Resumo
 
-Este trabalho propõe o desenvolvimento de um simulador em Java, com interface gráfica (GUI) utilizando a biblioteca Swing, para avaliar o desempenho de diferentes algoritmos de substituição de páginas. O objetivo é analisar e comparar a contagem de faltas de página (page faults) de quatro algoritmos selecionados (dentre FIFO, LRU, Relógio, Ótimo, NFU e Envelhecimento) com base em uma cadeia de referência de páginas fornecida pelo usuário. O simulador oferece uma interface interativa e uma visualização gráfica dos resultados, permitindo uma análise comparativa direta da eficiência de cada método no gerenciamento de memória virtual.
+Este trabalho propõe o desenvolvimento de um simulador em **Java**, com interface gráfica (**GUI**) utilizando a biblioteca **Swing**, para avaliar o desempenho de diferentes algoritmos de substituição de páginas.  
+O objetivo é analisar e comparar a contagem de **faltas de página (page faults)** dos quatro algoritmos implementados (**FIFO**, **LRU**, **Relógio** e **NFU**) com base em uma cadeia de referência de páginas fornecida pelo usuário.  
+
+O simulador oferece uma interface interativa e uma visualização gráfica dos resultados, permitindo uma análise comparativa direta da eficiência de cada método no gerenciamento de memória virtual.
+
+---
 
 ## Introdução
 
-O gerenciamento eficiente da memória virtual é crucial para o desempenho dos sistemas operacionais. A alocação e substituição de páginas são tarefas complexas que afetam diretamente a experiência do usuário. Neste contexto, os algoritmos de substituição de páginas desempenham um papel fundamental na otimização do uso da memória. Existem diversos algoritmos propostos para essa finalidade, cada um com suas características, complexidade e eficiência. Os principais algoritmos estudados incluem o FIFO (First In, First Out), que substitui a página mais antiga; o LRU (Least Recently Used), que substitui a página menos recentemente usada; o Algoritmo do Relógio (ou Segunda Chance), uma aproximação do LRU; o Algoritmo Ótimo, que serve como base teórica de comparação; o NFU (Not Frequently Used) e o de Envelhecimento (Aging), que tentam simular o LRU via software. A escolha do algoritmo impacta diretamente a quantidade de faltas de página e, consequentemente, a performance geral do sistema.
+O gerenciamento eficiente da memória virtual é crucial para o desempenho dos sistemas operacionais.  
+A alocação e substituição de páginas são tarefas complexas que afetam diretamente a experiência do usuário.  
+Neste contexto, os **algoritmos de substituição de páginas** desempenham um papel fundamental na otimização do uso da memória.
+
+Existem diversos algoritmos propostos para essa finalidade, cada um com suas características, complexidade e eficiência.  
+Os 6 algoritmos propostos para serem implementados neste trabalho são (Sabendo que o aluno deve escolher 4 desses 6 para implementar):
+
+- **FIFO (First In, First Out):** Substitui a página mais antiga.  
+- **LRU (Least Recently Used):** Substitui a página menos recentemente usada.  
+- **Relógio (Clock):** Uma implementação de "segunda chance" que se aproxima do LRU.
+- **Algoritmo Ótimo:** Substitui a página que será usada mais tarde no futuro (ótima previsão). 
+- **NFU (Not Frequently Used):** Substitui a página menos referenciada com base em um contador de frequência.
+- **Envelhecimento (Aging):** Usa bits de envelhecimento para rastrear o tempo desde a última referência a cada página. As páginas com menor tempo de referência são substituídas.
+
+A escolha do algoritmo impacta diretamente a quantidade de **faltas de página** e, consequentemente, a performance geral do sistema.
+
+---
 
 ## Metodologia
 
-Para a construção do simulador, foi utilizada a linguagem de programação Java. A interface gráfica do usuário (GUI) foi desenvolvida com a biblioteca Java Swing, permitindo a interatividade do usuário com o programa. O sistema foi projetado para receber como entrada principal uma cadeia de números inteiros, que representa a sequência de páginas a serem acessadas. Foram implementados quatro métodos distintos, cada um correspondendo a um algoritmo de substituição de página (por exemplo: FIFO, LRU, Relógio e Ótimo). Cada método processa a mesma cadeia de referência de entrada, simulando o comportamento da memória e contabilizando o número de faltas de página. A interface gráfica permite ao usuário inserir a cadeia de páginas, definir o número de quadros de memória (frames) e executar a simulação. Ao final, a interface exibe os resultados e apresenta gráficos comparativos, conforme a funcionalidade extra solicitada.
+Para a construção do simulador, foi utilizada a linguagem de programação **Java**.  
+O sistema foi projetado para receber como entrada principal:
 
-## Resultados e Discussão
+- Uma cadeia de números inteiros (representando a sequência de páginas)  
+- O número de quadros de memória (**frames**)  
 
-O simulador exibe como saída principal o número total de faltas de página (page faults) para cada um dos quatro algoritmos implementados. A interface gráfica apresenta esses dados de forma clara, permitindo uma comparação direta. A saída segue o formato:
+Foram implementados quatro métodos distintos, cada um correspondendo a um algoritmo de substituição de página.  
+Cada método processa a mesma cadeia de referência de entrada, simulando o comportamento da memória e contabilizando o número de faltas de página.
 
-  * Método 1 (ex: FIFO) - X faltas de página
-  * Método 2 (ex: LRU) - Y faltas de página
-  * Método 3 (ex: Relógio) - Z faltas de página
-  * Método 4 (ex: Ótimo) - W faltas de página
+---
 
-Adicionalmente, gráficos comparativos em barras são gerados pela interface Swing para ilustrar visualmente qual algoritmo obteve o melhor desempenho (menor número de faltas) para uma determinada cadeia de entrada e configuração de quadros de memória. A discussão dos resultados permite observar como algoritmos mais simples, como o FIFO, tendem a ter um desempenho inferior (mais faltas de página) em comparação com algoritmos mais complexos como o LRU ou o Ótimo (que representa o limite ideal de eficiência).
+## Evolução da Interface
 
-## Conclusão
+Inicialmente, uma prova de conceito da interface foi desenvolvida como uma aplicação **web moderna (Full-Stack)** utilizando **React** e **Tailwind CSS** para o frontend, e **Spring Boot** para o backend (API).  
+Embora totalmente funcional, essa abordagem exigiria que o avaliador executasse dois ambientes separados (um servidor Java e um servidor Node.js).
 
-O simulador desenvolvido em Java e Swing provou ser uma ferramenta didática e funcional para o estudo e a análise comparativa de algoritmos de substituição de páginas. O software cumpre os objetivos propostos ao implementar quatro algoritmos distintos e ao fornecer uma interface gráfica interativa para a visualização dos resultados, incluindo a contagem de faltas de página e gráficos comparativos. O projeto permite a visualização prática de conceitos teóricos de gerenciamento de memória virtual, facilitando o entendimento sobre o impacto direto da escolha do algoritmo na performance de um sistema.
+Para facilitar os testes e a correção, o projeto foi **refatorado** para uma **aplicação desktop única**, utilizando a biblioteca nativa **Java Swing** para a interface gráfica (GUI).  
+Isso permite que o simulador seja executado como um único arquivo `.jar` ou diretamente pela IDE, simplificando a verificação.
 
-## Referências
+A interface Swing permite ao usuário:
 
-DEVMEDIA. **Introdução à interface GUI no Java**. Disponível em: [https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646](https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646). Acesso em: 31 out. 2025.
+- Inserir a cadeia de páginas  
+- Definir o número de quadros de memória  
+- Executar a simulação  
+- Visualizar os resultados e gráficos comparativos em barras  
 
-PRIMEGUI. **PrimeFaces ShowCase**. Disponível em: [https://www.primefaces.org](https://www.primefaces.org). Acesso em: 31 out. 2025.
+---
 
-SDPM-SIMULATOR. **Page Replacement Algorithm Simulator**. Disponível em: [https://sdpm-simulator.netlify.app](https://sdpm-simulator.netlify.app). Acesso em: 31 out. 2025.
+## Como Executar
 
-TANENBAUM, A. S.; BOS, H. **Sistemas Operacionais Modernos**. 4. ed. São Paulo: Pearson Prentice Hall, 2016.
+Existem duas formas de executar o simulador:
+
+### 1. Executando pela IDE (Recomendado)
+
+1. Clone o repositório.  
+2. Abra o projeto em sua **IDE Java** preferida (IntelliJ, Eclipse, etc.).  
+3. Localize a classe principal que contém o método `main` (provavelmente `Main.java` ou `SimuladorGUI.java`).  
+4. Execute o arquivo. A interface Swing será iniciada.
+
+---
+
+### 2. Executando o arquivo `.jar` (Se disponível)
+
+Se um arquivo `.jar` executável for fornecido, você pode executá-lo com um duplo clique ou através do terminal:
+
+```bash
+java -jar nome-do-arquivo.jar
