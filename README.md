@@ -52,7 +52,7 @@ Cada método processa a mesma cadeia de referência de entrada, simulando o comp
 ## Evolução da Interface
 
 Inicialmente, uma prova de conceito da interface foi desenvolvida como uma aplicação **web moderna (Full-Stack)** utilizando **React** e **Tailwind CSS** para o frontend, e **Spring Boot** para o backend (API).  
-Embora totalmente funcional, essa abordagem exigiria que o avaliador executasse dois ambientes separados (um servidor Java e um servidor Node.js).
+Embora totalmente funcional, essa abordagem exigiria que o professor executasse dois ambientes separados (um servidor Java e um servidor Node.js).
 
 Para facilitar os testes e a correção, o projeto foi **refatorado** para uma **aplicação desktop única**, utilizando a biblioteca nativa **Java Swing** para a interface gráfica (GUI).  
 Isso permite que o simulador seja executado como um único arquivo `.jar` ou diretamente pela IDE, simplificando a verificação.
